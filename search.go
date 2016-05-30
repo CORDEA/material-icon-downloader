@@ -19,8 +19,10 @@
 package main
 
 import (
+    "os"
     "log"
     "fmt"
+    "bufio"
     "strconv"
     "strings"
 )
@@ -84,6 +86,16 @@ func (s *Search) byName() *Icon {
     return nil
 }
 
+func (s *Search) readFromStdin(msg string) string {
+    r := bufio.NewReader(os.Stdin)
+    fmt.Print(msg)
+    str, err := r.ReadString('\n')
+    if err != nil {
+        log.Fatalln(err)
+    }
+    return str
+}
+
 func (s *Search) Search(st, color string, size int) *Icon {
     switch(st) {
     case "name":
@@ -95,7 +107,7 @@ func (s *Search) Search(st, color string, size int) *Icon {
         }
         idx := -1
         for ;; {
-            str := readFromStdin()
+            str := s.readFromStdin("Please enter the number: ")
             i, err := strconv.Atoi(strings.TrimSpace(str))
             if err != nil {
                 log.Println(err)

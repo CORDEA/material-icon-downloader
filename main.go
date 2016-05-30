@@ -25,7 +25,6 @@ import (
     "os"
     "io"
     "path"
-    "bufio"
     "net/url"
     "io/ioutil"
     "encoding/json"
@@ -72,15 +71,6 @@ func saveFile(url, out string) {
         os.Remove(out)
         log.Fatalln(err)
     }
-}
-
-func readFromStdin() string {
-    r := bufio.NewReader(os.Stdin)
-    str, err := r.ReadString('\n')
-    if err != nil {
-        log.Fatalln(err)
-    }
-    return str
 }
 
 func checkTypes(st, ft, cl string, sz int) string {
