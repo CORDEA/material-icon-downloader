@@ -32,11 +32,11 @@ import (
 )
 
 var (
-    color = flag.String("c", "black", "")
-    size = flag.Int("s", 24, "")
-    fileType = flag.String("f", "zip", "")
-    searchType = flag.String("t", "name", "")
-    out = flag.String("o", ".", "")
+    color = flag.String("c", "black", "Material icon color. Valid color is black or white.")
+    size = flag.Int("s", 24, "Material icon size. Valid size is 18 or 24, 36, 48dp.")
+    fileType = flag.String("f", "zip", "File type. Valid type is svg or zip.")
+    searchType = flag.String("t", "name", "Search by name, or keyword.")
+    out = flag.String("o", ".", "Output directory.")
 )
 
 const (
