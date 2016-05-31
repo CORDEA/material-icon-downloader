@@ -1,5 +1,27 @@
 # material-icon-downloader
 
+## Usage
+
+```
+Usage of ./material-icon-downloader:
+  -c="black": Material icon color. Valid color is black or white.
+  -f="zip": File type. Valid type is svg or zip.
+  -o=".": Output directory.
+  -s=24: Material icon size. Valid size is 18 or 24, 36, 48dp.
+  -t="name": Search by name, or keyword.
+```
+
+
+```
+% material-icon-downloader "3d rotation"
+% material-icon-downloader -t keyword search
+0: search
+1: youtube searched for
+2: bluetooth searching
+3: location searching
+Please enter the number:
+```
+
 ## License
 
 ```
